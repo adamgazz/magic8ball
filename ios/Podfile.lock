@@ -69,6 +69,8 @@ PODS:
     - ReactCommon
   - ExpoSensors (55.0.8):
     - ExpoModulesCore
+  - ExpoSplashScreen (55.0.10):
+    - ExpoModulesCore
   - FBLazyVector (0.83.2)
   - hermes-engine (0.14.1):
     - hermes-engine/Pre-built (= 0.14.1)
@@ -1955,6 +1957,7 @@ DEPENDENCIES:
   - ExpoModulesCore (from `../node_modules/expo-modules-core`)
   - ExpoModulesJSI (from `../node_modules/expo-modules-core`)
   - ExpoSensors (from `../node_modules/expo-sensors/ios`)
+  - ExpoSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
@@ -2055,6 +2058,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-modules-core"
   ExpoSensors:
     :path: "../node_modules/expo-sensors/ios"
+  ExpoSplashScreen:
+    :path: "../node_modules/expo-splash-screen/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   hermes-engine:
@@ -2219,6 +2224,7 @@ SPEC CHECKSUMS:
   ExpoModulesCore: c2cbdb8ac214d455e2e8753e480e425bf79dc9fa
   ExpoModulesJSI: fdb82be16565ad49cdff2b68af8442b40ba9c259
   ExpoSensors: 16406f96806c61195bc7e49e15a51e928344fe06
+  ExpoSplashScreen: 91624a9550497925d9606fc9da86061369833716
   FBLazyVector: 32e9ed0301d0fcbc1b2b341dd7fcbf291f51eb83
   hermes-engine: c4be0a92260b5b094f56d2179ae220c59da9ae74
   RCTDeprecation: a522c536d2c7be8f518dd834883cf6dce1d4f545
