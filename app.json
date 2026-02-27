@@ -13,7 +13,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.yourname.magic8ball"
+      "bundleIdentifier": "com.adamgazzaley.magic8ball"
     },
     "android": {
       "adaptiveIcon": {
