@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useCallback, useState } from 'react';
+import * as SplashScreen from 'expo-splash-screen';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -14,12 +15,20 @@ import { useEightBallAnimation } from './src/hooks/useEightBallAnimation';
 import { useResponseList } from './src/hooks/useResponseList';
 import { useShakeDetection } from './src/hooks/useShakeDetection';
 
+SplashScreen.preventAutoHideAsync();
+
 export default function App() {
   const [currentResponse, setCurrentResponse] = useState('');
   const [listModalVisible, setListModalVisible] = useState(false);
 
-  const { responses, addResponse, editResponse, deleteResponse, pickRandom } =
+  const { responses, addResponse, editResponse, deleteResponse, pickRandom, isLoaded } =
     useResponseList();
+
+  useEffect(() => {
+    if (isLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [isLoaded]);
 
   const { rippleScale, textOpacity, textScale, resetBall, triggerReveal } =
     useEightBallAnimation();
