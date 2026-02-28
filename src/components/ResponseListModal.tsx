@@ -91,6 +91,7 @@ export function ResponseListModal({
               onDelete={onDelete}
             />
           )}
+          style={styles.list}
           contentContainerStyle={styles.listContent}
         />
 
@@ -167,6 +168,9 @@ const styles = StyleSheet.create({
     color: COLORS.buttonAdd,
     fontSize: 16,
     fontWeight: '600',
+  },
+  list: {
+    flex: 1,
   },
   listContent: {
     flexGrow: 1,
