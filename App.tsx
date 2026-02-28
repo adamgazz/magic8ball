@@ -21,7 +21,7 @@ export default function App() {
   const [currentResponse, setCurrentResponse] = useState('');
   const [listModalVisible, setListModalVisible] = useState(false);
 
-  const { responses, addResponse, editResponse, deleteResponse, pickRandom, isLoaded } =
+  const { responses, addResponse, editResponse, deleteResponse, resetToDefaults, pickRandom, isLoaded } =
     useResponseList();
 
   useEffect(() => {
@@ -88,6 +88,7 @@ export default function App() {
         onAdd={addResponse}
         onEdit={editResponse}
         onDelete={deleteResponse}
+        onReset={resetToDefaults}
       />
     </SafeAreaView>
     </SafeAreaProvider>

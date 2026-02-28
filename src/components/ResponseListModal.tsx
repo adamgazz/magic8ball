@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  Alert,
   FlatList,
   Modal,
   StyleSheet,
@@ -19,6 +20,7 @@ interface Props {
   onAdd: (text: string) => void;
   onEdit: (index: number, text: string) => void;
   onDelete: (index: number) => void;
+  onReset: () => void;
 }
 
 type EditState = { visible: boolean; index: number; text: string };
@@ -32,6 +34,7 @@ export function ResponseListModal({
   onAdd,
   onEdit,
   onDelete,
+  onReset,
 }: Props) {
   const [editState, setEditState] = useState<EditState>(INITIAL_EDIT);
 
@@ -91,10 +94,25 @@ export function ResponseListModal({
           contentContainerStyle={styles.listContent}
         />
 
-        {/* Add button */}
+        {/* Footer buttons */}
         <View style={styles.footer}>
           <TouchableOpacity style={styles.addBtn} onPress={openAdd}>
             <Text style={styles.addBtnText}>+ Add Response</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.resetBtn}
+            onPress={() =>
+              Alert.alert(
+                'Reset to Defaults',
+                'This will replace all responses with the default list. Continue?',
+                [
+                  { text: 'Cancel', style: 'cancel' },
+                  { text: 'Reset', style: 'destructive', onPress: onReset },
+                ],
+              )
+            }
+          >
+            <Text style={styles.resetBtnText}>Reset to Defaults</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -163,10 +181,19 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingVertical: 14,
     alignItems: 'center',
+    marginBottom: 10,
   },
   addBtnText: {
     color: COLORS.white,
     fontSize: 16,
     fontWeight: '700',
+  },
+  resetBtn: {
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  resetBtnText: {
+    color: COLORS.buttonDelete,
+    fontSize: 14,
   },
 });

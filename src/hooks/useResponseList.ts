@@ -47,11 +47,15 @@ export function useResponseList() {
     });
   }, []);
 
+  const resetToDefaults = useCallback(() => {
+    setResponses(DEFAULT_RESPONSES);
+  }, []);
+
   const pickRandom = useCallback((): string => {
     if (responses.length === 0) return '…';
     const idx = Math.floor(Math.random() * responses.length);
     return responses[idx];
   }, [responses]);
 
-  return { responses, addResponse, editResponse, deleteResponse, pickRandom, isLoaded };
+  return { responses, addResponse, editResponse, deleteResponse, resetToDefaults, pickRandom, isLoaded };
 }
