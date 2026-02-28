@@ -19,4 +19,5 @@ export const DEFAULT_RESPONSES: string[] = [
   'My sources say no',
   'Outlook not so good',
   'Very doubtful',
+  'Be strong, but gentle. Be confident, but humble. Be tenacious, but flexible.',
 ];
