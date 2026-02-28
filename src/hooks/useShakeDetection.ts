@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import * as Haptics from 'expo-haptics';
 import { Accelerometer } from 'expo-sensors';
 
 const SHAKE_THRESHOLD = 1.8;
@@ -32,6 +33,7 @@ export function useShakeDetection(onShake: () => void) {
       if (peak > SHAKE_THRESHOLD && now - lastShakeRef.current > COOLDOWN_MS) {
         lastShakeRef.current = now;
         samplesRef.current = []; // clear window after trigger
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
         onShakeRef.current();
       }
     });
