@@ -75,11 +75,9 @@ export default function App() {
         {!currentResponse && (
           <Text style={styles.hint}>Shake to reveal your answer</Text>
         )}
-        {__DEV__ && (
-          <TouchableOpacity style={styles.debugBtn} onPress={handleShake}>
-            <Text style={styles.debugText}>Shake (dev)</Text>
-          </TouchableOpacity>
-        )}
+        <TouchableOpacity style={styles.tapBtn} onPress={handleShake}>
+          <Text style={styles.tapText}>Tap to shake</Text>
+        </TouchableOpacity>
       </View>
 
       {/* Response list modal */}
@@ -131,14 +129,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontStyle: 'italic',
   },
-  debugBtn: {
-    backgroundColor: '#333',
-    paddingHorizontal: 20,
+  tapBtn: {
+    borderWidth: 1,
+    borderColor: COLORS.hintText,
+    paddingHorizontal: 24,
     paddingVertical: 10,
-    borderRadius: 8,
+    borderRadius: 20,
   },
-  debugText: {
-    color: '#AAA',
+  tapText: {
+    color: COLORS.hintText,
     fontSize: 14,
   },
 });
