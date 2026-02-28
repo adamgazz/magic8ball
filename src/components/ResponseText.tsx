@@ -16,7 +16,7 @@ export function ResponseText({ text, opacity, scale }: Props) {
         { opacity, transform: [{ scale }] },
       ]}
     >
-      <Text style={styles.text} numberOfLines={4} adjustsFontSizeToFit>
+      <Text style={styles.text} numberOfLines={8} minimumFontSize={10} adjustsFontSizeToFit>
         {text}
       </Text>
     </Animated.View>
@@ -25,7 +25,7 @@ export function ResponseText({ text, opacity, scale }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    width: INNER_CIRCLE_SIZE * 0.8,
+    width: INNER_CIRCLE_SIZE * 0.85,
     alignItems: 'center',
     justifyContent: 'center',
   },
